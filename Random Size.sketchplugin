@@ -17,6 +17,14 @@ function createSelect(msg, items, selectedItemIndex){
   return [responseCode, sel]
 }
 
+// Returns a random integer between min (included) and max (excluded)
+// Using Math.round() will give you a non-uniform distribution!
+function getRandomInt(min, max) {
+  var min = parseInt(min);
+  var max = parseInt(max);
+  return Math.round((Math.random() * (max - min) + min), 0);
+}
+
 function randomize() {
   var options = ['Width', 'Height'];
   var choice = createSelect('Randomise width or height?',options, 0);
@@ -25,11 +33,12 @@ function randomize() {
   if (choice[0] == 1001)
     return;
 
-  var maxSize = [doc askForUserInput:"Maximum size?" initialValue:""]
+  var maxSize = [doc askForUserInput:"Upper size?" initialValue:"0"];
+  var minSize = [doc askForUserInput:"Lower size?" initialValue:"0"];
 
   for (var i=0; i < [selection count]; i++) {
     var layer = selection[i];
-    var randomSize = Math.round(Math.random() * maxSize, 0);
+    var randomSize = getRandomInt(minSize, maxSize);
     
     switch(choice[1]) {
       case 0: // width
