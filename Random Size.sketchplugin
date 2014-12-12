@@ -1,0 +1,45 @@
+function createSelect(msg, items, selectedItemIndex){
+  selectedItemIndex = selectedItemIndex || 0
+
+  var accessory = [[NSComboBox alloc] initWithFrame:NSMakeRect(0,0,200,25)]
+  [accessory addItemsWithObjectValues:items]
+  [accessory selectItemAtIndex:selectedItemIndex]
+
+  var alert = [[NSAlert alloc] init]
+  [alert setMessageText:msg]
+  [alert addButtonWithTitle:'OK']
+  [alert addButtonWithTitle:'Cancel']
+  [alert setAccessoryView:accessory]
+
+  var responseCode = [alert runModal]
+  var sel = [accessory indexOfSelectedItem]
+
+  return [responseCode, sel]
+}
+
+function randomize() {
+  var options = ['Width', 'Height'];
+  var choice = createSelect('Randomise width or height?',options, 0);
+
+  // if cancelled
+  if (choice[0] == 1001)
+    return;
+
+  var maxSize = [doc askForUserInput:"Maximum size?" initialValue:""]
+
+  for (var i=0; i < [selection count]; i++) {
+    var layer = selection[i];
+    var randomSize = Math.round(Math.random() * maxSize, 0);
+    
+    switch(choice[1]) {
+      case 0: // width
+      layer.frame().setWidth(randomSize);
+      break;
+      case 1: // height
+      layer.frame().setHeight(randomSize);
+      break;
+    }
+  }
+}
+
+randomize();
