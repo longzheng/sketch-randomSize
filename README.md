@@ -3,6 +3,8 @@ Random sizing plugin for Sketch
 
 A Sketch 3 plugin that will randomly size the width or height of selected elements. In combination with other plugins like [Duplicator](https://github.com/turbobabr/duplicator), this is useful to simulate graphs or charts of random values.
 
+![](https://raw.githubusercontent.com/longzheng/sketch-randomSize/gh-pages/overview.png)
+
 Installation
 --------
 1. Download and unzip the plugin
