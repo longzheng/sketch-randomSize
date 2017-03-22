@@ -1,0 +1,18 @@
+{
+    "name": "Random size",
+    "description": "Randomly resize selected elements",
+    "author": "Long Zheng",
+    "authorEmail": "long.zheng@gmail.com",
+    "homepage": "https://github.com/longzheng/sketch-randomSize",
+    "version": "2.0",
+    "identifier": "com.longzheng.sketch.randomsize",
+    "commands" : [
+      {
+      "name" : "Randomly size...",
+      "identifier" : "randomsize",
+      "shortcut" : "",
+      "script" : "resize.js",
+      "handler" : "onRun"
+      }
+    ]
+}
