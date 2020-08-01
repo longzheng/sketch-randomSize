@@ -7,7 +7,7 @@ A Sketch plugin that will randomly size the width or height of selected elements
 
 Installation
 --------
-1. [Download and unzip the plugin](https://github.com/longzheng/sketch-randomSize/releases/download/3.0/Random.Size.zip)
+1. [Download and unzip the plugin](https://github.com/longzheng/sketch-randomSize/releases/download/3.0/RandomSize.sketchplugin.zip)
 2. Find your Sketch plugins directory (Plugins > Reveal Plugins Folder...)
 3. Copy folder to plugins folder
 
